@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Page</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/client.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/career.css" />
+
+  <style>
+    .general-apply {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .general-apply.active {
+      display: block;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Service</a></li>
+      <li><a href="client.html">Client</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="career.html">Career</a></li>
+    </ul>
+  </nav>
+
+  <header id="home" role="banner">
+    <h1 class="animate__animated animate__bounceInDown">Join Our Team</h1>
+    <p class="animate__animated animate__fadeInUp">We're always looking for talented people to grow with us.</p>
+  </header>
+
+  <section class="career container">
+    <h2 class="section-title">Open Positions</h2>
+
+    <div class="job-listing">
+      <div class="job-card">
+        <h3>Frontend Developer</h3>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Type:</strong> Full-time</p>
+        <p>We’re looking for someone skilled in Android and IOS.</p>
+        <a href="#apply" class="btn" onclick="showApplicationForm()">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <h3>UI/UX Designer</h3>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Type:</strong> Full-time</p>
+        <p>Help us design beautiful and user-friendly interfaces for web and mobile.</p>
+        <a href="#apply" class="btn" onclick="showApplicationForm()">Apply Now</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Backend Developer</h3>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Type:</strong> Full-time</p>
+        <p>Experience with Node.js, .NET, or Django? We’d love to talk!</p>
+        <a href="#apply" class="btn" onclick="showApplicationForm()">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="general-apply" id="apply">
+      <h2>Didn't find your role?</h2>
+      <p>We're always excited to meet new talent. Send us your resume!</p>
+
+      <form onsubmit="redirectToGoogleForm(event)">
+        <!-- You can enable these fields if you want to collect user input locally
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Tell us why you'd be a great fit..." required></textarea> -->
+        <button type="submit" class="btn">Process Application</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CPMCD Tech Platform. All rights reserved.
+  </footer>
+
+  <script>
+    function showApplicationForm() {
+      const formSection = document.getElementById("apply");
+      formSection.classList.add("active");
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function redirectToGoogleForm(event) {
+      event.preventDefault();
+      window.location.href = "https://forms.gle/CaBbnce88KmYjW5A6";
+    }
+  </script>
+</body>
+
+</html>

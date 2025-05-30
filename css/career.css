@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.career-hero {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: white;
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+
+.career-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.career-hero p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1.2s ease;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #4e4376;
+  text-align: center;
+}
+
+.job-listing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.job-card {
+  flex: 1 1 280px;
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  margin-bottom: 10px;
+  color: #4e4376;
+}
+
+.job-card p {
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: #4e4376;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #006f8a;
+}
+
+.general-apply {
+  margin-top: 60px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1.2s ease;
+}
+
+.general-apply h2 {
+  margin-bottom: 10px;
+  color: #4e4376;
+}
+
+.general-apply form {
+  margin-top: 20px;
+}
+
+.general-apply input,
+.general-apply textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.general-apply input:focus,
+.general-apply textarea:focus {
+  outline: none;
+  border-color: #00b4db;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #4e4376, #2b5876);
+  color: white;
+  margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .job-listing {
+    flex-direction: column;
+  }
+}
