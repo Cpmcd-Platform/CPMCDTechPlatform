@@ -1,94 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CPMCD Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CPMCD Tech</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <link rel="stylesheet" href="css/style.css" />
+  <body>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="client.html">Client</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="outteam.html">Our Team</a></li>
+      </ul>
+    </nav>
 
-</head>
+    <header id="home" role="banner">
+      <h1 class="animate__animated animate__bounceInDown">Welcome to CPMCD Tech Platform</h1>
+      <p class="animate__animated animate__fadeInUp">Innovating digital solutions for the modern world</p>
+    </header>
 
-<body>
+    <main>
+      <section id="about" class="container" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-title">About Us</h2>
+        <p>
+          CPMCD Tech Platform is committed to delivering the best in technology and innovation. Our team specializes in
+          crafting user-centered designs, scalable solutions, and impactful digital experiences.
+        </p>
+      </section>
 
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="#home" aria-current="page">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Service</a></li>
-      <li><a href="client.html">Client</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="career.html">Career</a></li>
-    </ul>
-  </nav>
-
-  <header id="home" role="banner">
-    <h1 class="animate__animated animate__bounceInDown">Welcome to CPMCD Tech Platform</h1>
-    <p class="animate__animated animate__fadeInUp">Innovating digital solutions for the modern world</p>
-  </header>
-
-  <main>
-    <section id="about" class="container" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About Us</h2>
-      <p>
-        CPMCD Tech Platform is committed to delivering the best in technology and innovation.
-        Our team specializes in crafting user-centered designs, scalable solutions, and
-        impactful digital experiences.
-      </p>
-    </section>
-
-    <section id="counter" class="counter-section" aria-labelledby="counter-title">
-      <h2 id="counter-title" class="section-title" style="color:#fff;">Our Achievements</h2>
-      <div class="counter-grid" role="list">
-        <div class="counter-item" role="listitem">
-          <div class="counter" data-target="1">0</div>
-          <div class="counter-label">Clients</div>
+      <section id="counter" class="counter-section" aria-labelledby="counter-title">
+        <h2 id="counter-title" class="section-title" style="color: #fff">Our Achievements</h2>
+        <div class="counter-grid" role="list">
+          <div class="counter-item" role="listitem">
+            <div class="counter" data-target="1">0</div>
+            <div class="counter-label">Clients</div>
+          </div>
+          <div class="counter-item" role="listitem">
+            <div class="counter" data-target="1">0</div>
+            <div class="counter-label">Projects</div>
+          </div>
+          <div class="counter-item" role="listitem">
+            <div class="counter" data-target="50">0</div>
+            <div class="counter-label">Completed Tasks</div>
+          </div>
         </div>
-        <div class="counter-item" role="listitem">
-          <div class="counter" data-target="1">0</div>
-          <div class="counter-label">Projects</div>
-        </div>
-        <div class="counter-item" role="listitem">
-          <div class="counter" data-target="50">0</div>
-          <div class="counter-label">Completed Tasks</div>
-        </div>
+      </section>
+    </main>
 
-      </div>
-    </section>
+    <footer>&copy; 2025 CPMCD Tech Platform. All rights reserved.</footer>
 
-   
-  </main>
+    <script src="js/script.js"></script>
 
-  <footer>
-    &copy; 2025 CPMCD Tech Platform. All rights reserved.
-  </footer>
+    <script>
+      // Counter animation from 0 to target value
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        counter.innerText = "0";
+        const updateCounter = () => {
+          const target = +counter.getAttribute("data-target");
+          const current = +counter.innerText;
+          const increment = target / 150;
 
-  <script src="js/script.js"></script>
-
-  <script>
-    // Counter animation from 0 to target value
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      counter.innerText = '0';
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText;
-        const increment = target / 150;
-
-        if (current < target) {
-          counter.innerText = `${Math.ceil(current + increment)}`;
-          setTimeout(updateCounter, 15);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCounter();
-    });
-  </script>
-
-</body>
-
+          if (current < target) {
+            counter.innerText = `${Math.ceil(current + increment)}`;
+            setTimeout(updateCounter, 15);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+      });
+    </script>
+  </body>
 </html>
