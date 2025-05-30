@@ -576,7 +576,7 @@
             }
         </style>
     </head>
-    <body>
+    <body oncontextmenu="return false;">
         <!-- Navigation -->
         <nav aria-label="Primary navigation">
             <ul>
@@ -771,6 +771,31 @@
                 event.preventDefault();
                 window.location.href = "https://forms.gle/CaBbnce88KmYjW5A6";
             }
+
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function (e) {
+            // F12
+            if (e.keyCode === 123) {
+                return false;
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                return false;
+            }
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                return false;
+            }
+            // Ctrl+U (view source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                return false;
+            }
+        };
+
         </script>
     </body>
 </html>

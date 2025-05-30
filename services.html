@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/service.css" />
   </head>
 
-  <body>
+  <body oncontextmenu="return false;">
     <nav aria-label="Primary navigation">
       <ul>
         <li><a href="#home" aria-current="page">Home</a></li>
@@ -124,5 +124,30 @@
     <footer>
       <span>© 2025 CPMCD Tech Platform. All rights reserved.</span>
     </footer>
+     <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function (e) {
+            // F12
+            if (e.keyCode === 123) {
+                return false;
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                return false;
+            }
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                return false;
+            }
+            // Ctrl+U (view source)
+            if (e.ctrlKey && e.keyCode === 85) {
+                return false;
+            }
+        };
+
+    </script>
   </body>
 </html>
