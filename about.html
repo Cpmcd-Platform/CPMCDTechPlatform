@@ -1,777 +1,801 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About Us</title>
-        <link rel="icon" type="image/x-icon" href="https://media.licdn.com/dms/image/v2/D4E0BAQFKHtJ2ftBh6g/company-logo_400_400/company-logo_400_400/0/1721794310336/cpmcd_platform_technology_logo?e=2147483647&v=beta&t=9r1F8eCsjUid0Vyh_4Xl4l8Rt_daRUQAMwIENLAMIPk">
 
-        <!-- Google Fonts -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://media.licdn.com/dms/image/v2/D4E0BAQFKHtJ2ftBh6g/company-logo_400_400/company-logo_400_400/0/1721794310336/cpmcd_platform_technology_logo?e=2147483647&v=beta&t=9r1F8eCsjUid0Vyh_4Xl4l8Rt_daRUQAMwIENLAMIPk">
 
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
 
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-        <!-- Vanilla Tilt for 3D Effects -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-        <link rel="stylesheet" href="css/client.css" />
-        <link rel="stylesheet" href="css/style.css" />
+    <!-- Vanilla Tilt for 3D Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 
-        <style>
-            :root {
-                --primary: #7c3aed;
-                --secondary: #3b82f6;
-                --bg: #f1f5f9;
-                --card-bg: rgba(255, 255, 255, 0.9);
-                --accent: #f43f5e;
-                --radius-lg: 1.8rem;
-                --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-                --text-dark: #111827;
-                --text-light: #6b7280;
+    <link rel="stylesheet" href="css/client.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --secondary: #3b82f6;
+            --bg: #f1f5f9;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --accent: #f43f5e;
+            --radius-lg: 1.8rem;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --text-dark: #111827;
+            --text-light: #6b7280;
+        }
+
+        /* Reset and other existing styles */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+            z-index: -1;
+            animation: pulse 10s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
             }
 
-            /* Reset and other existing styles */
-            *,
-            *::before,
-            *::after {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
             }
+        }
 
-            html {
-                scroll-behavior: smooth;
-                font-size: 16px;
-            }
+        /* Sections */
+        section {
+            padding: clamp(3rem, 8vw, 5rem) 1rem;
+        }
 
-            body::before {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
-                z-index: -1;
-                animation: pulse 10s infinite ease-in-out;
-            }
+        .container {
+            max-width: clamp(320px, 90%, 1400px);
+            margin: 0 auto;
+        }
 
-            @keyframes pulse {
-                0%,
-                100% {
-                    transform: scale(1);
-                    opacity: 0.5;
-                }
-                50% {
-                    transform: scale(1.2);
-                    opacity: 0.3;
-                }
-            }
+        .section-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
 
-            /* Sections */
-            section {
-                padding: clamp(3rem, 8vw, 5rem) 1rem;
-            }
+        .section-title::after {
+            content: "";
+            width: 5rem;
+            height: 6px;
+            background: var(--accent);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -0.8rem;
+            border-radius: 3px;
+            animation: pulseWidth 2s infinite ease-in-out;
+        }
 
-            .container {
-                max-width: clamp(320px, 90%, 1400px);
-                margin: 0 auto;
-            }
+        @keyframes pulseWidth {
 
-            .section-title {
-                font-size: clamp(2rem, 6vw, 3rem);
-                color: var(--primary);
-                text-align: center;
-                margin-bottom: 3rem;
-                position: relative;
-            }
-
-            .section-title::after {
-                content: "";
+            0%,
+            100% {
                 width: 5rem;
-                height: 6px;
-                background: var(--accent);
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -0.8rem;
-                border-radius: 3px;
-                animation: pulseWidth 2s infinite ease-in-out;
             }
 
-            @keyframes pulseWidth {
-                0%,
-                100% {
-                    width: 5rem;
-                }
-                50% {
-                    width: 7rem;
-                }
+            50% {
+                width: 7rem;
             }
+        }
 
-            .about-text {
-                text-align: center;
-                max-width: 1000px;
-                margin: 0 auto;
-                font-size: clamp(1rem, 2.5vw, 1.2rem);
-                color: var(--text-light);
-                animation: fadeIn 1.5s ease-out;
-            }
+        .about-text {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-light);
+            animation: fadeIn 1.5s ease-out;
+        }
 
-            /* Developer Cards */
+        /* Developer Cards */
+        .developer-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
+            padding: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .developer-img {
+            width: clamp(150px, 30vw, 200px);
+            height: clamp(150px, 30vw, 200px);
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .developer-card:hover .developer-img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .developer-info h3 {
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .developer-info p {
+            color: var(--text-light);
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: 1rem;
+        }
+
+        .developer-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .developer-info li {
+            margin-bottom: 0.6rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--text-light);
+        }
+
+        /* Enhanced Card-1 */
+        .card-1 {
+            scroll-snap-align: start;
+            flex: 0 0 clamp(320px, 65vw, 400px);
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            perspective: 1000px;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            min-height: 500px;
+        }
+
+        .card-1::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            border-radius: var(--radius-lg);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-1:hover::before {
+            opacity: 1;
+        }
+
+        .card-1:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Ensure content is well-distributed */
+        }
+
+        .card-1:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            /* Better content distribution */
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .card-back {
+            background: var(--gradient);
+            color: white;
+            transform: rotateY(180deg);
+            border-radius: var(--radius-lg);
+            justify-content: center;
+            /* Center content vertically for back */
+        }
+
+        .card-1 img {
+            width: clamp(120px, 30vw, 150px);
+            height: clamp(120px, 30vw, 150px);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .card-1:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            /* Increased gap for better spacing */
+            flex-grow: 1;
+            justify-content: center;
+            /* Center content vertically */
+            width: 100%;
+        }
+
+        .card-1 .name {
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            /* Reduced margin for tighter hierarchy */
+        }
+
+        .card-1 .title {
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .card-1 p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-light);
+            line-height: 1.6;
+            max-width: 85%;
+            /* Slightly reduced to prevent overflow */
+            margin-bottom: 1.2rem;
+        }
+
+        .card-back p {
+            color: white;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 1.5rem;
+            max-width: 85%;
+            text-align: center;
+        }
+
+        .card-1 ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            text-align: left;
+            /* Align skills list to the left for better readability */
+            margin-bottom: 1.2rem;
+        }
+
+        .card-1 li {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .card-1 li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .card-1 .social-links {
+            display: flex;
+            gap: 1.8rem;
+            /* Increased gap for better spacing */
+            margin-top: auto;
+            /* Push social links to bottom */
+        }
+
+        .card-1 .social-links a {
+            color: var(--primary);
+            font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+            transition: all 0.3s ease;
+        }
+
+        .card-back .social-links a {
+            color: white;
+        }
+
+        .card-1 .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px) scale(1.3);
+        }
+
+        .progress-bar {
+            width: 80%;
+            /* Reduced width for better centering */
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1.2rem auto;
+            /* Centered with auto margins */
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        .card-1:hover .progress-fill {
+            width: 75%;
+        }
+
+        /* Scroll Buttons */
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            width: 3rem;
+            height: 3rem;
+            transform: translateY(-50%);
+            border: none;
+            border-radius: 50%;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            background: #fff;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .scroll-btn i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .scroll-btn.left {
+            left: -2rem;
+        }
+
+        .scroll-btn.right {
+            right: -2rem;
+        }
+
+        /* Scroll Container */
+        .scroll-wrapper {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--bg);
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        /* General Apply Section */
+        .general-apply {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
+            padding: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .general-apply h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .general-apply p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .general-apply form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .general-apply .btn {
+            background: var(--gradient);
+            color: white;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            font-weight: 500;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .general-apply .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .developer-card {
-                display: flex;
                 flex-direction: column;
-                align-items: center;
-                gap: 2rem;
-                background: var(--card-bg);
-                backdrop-filter: blur(15px);
-                border-radius: var(--radius-lg);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: var(--shadow);
-                padding: clamp(2rem, 5vw, 3rem);
-                margin-bottom: 2rem;
-                transition: all 0.4s ease;
-                position: relative;
-            }
-
-            .developer-card:hover {
-                transform: translateY(-12px) scale(1.02);
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+                text-align: center;
             }
 
             .developer-img {
-                width: clamp(150px, 30vw, 200px);
-                height: clamp(150px, 30vw, 200px);
-                border-radius: 50%;
-                object-fit: cover;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-                transition: transform 0.4s ease;
+                width: 150px;
+                height: 150px;
             }
 
-            .developer-card:hover .developer-img {
-                transform: scale(1.1) rotate(5deg);
-            }
-
-            .developer-info h3 {
-                font-size: clamp(1.4rem, 4vw, 1.8rem);
-                color: var(--primary);
-                margin-bottom: 0.8rem;
-            }
-
-            .developer-info p {
-                color: var(--text-light);
-                font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-                margin-bottom: 1rem;
-            }
-
-            .developer-info ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            .developer-info li {
-                margin-bottom: 0.6rem;
-                font-size: clamp(0.9rem, 2.5vw, 1rem);
-                color: var(--text-light);
-            }
-
-            /* Enhanced Card-1 */
             .card-1 {
-                scroll-snap-align: start;
-                flex: 0 0 clamp(320px, 65vw, 400px);
-                background: var(--card-bg);
-                border-radius: var(--radius-lg);
-                border: 2px solid transparent;
-                background-clip: padding-box;
-                box-shadow: var(--shadow);
-                text-align: center;
-                position: relative;
-                perspective: 1000px;
-                transition: all 0.5s ease;
-                overflow: hidden;
-                min-height: 500px;
-            }
-
-            .card-1::before {
-                content: "";
-                position: absolute;
-                top: -2px;
-                left: -2px;
-                right: -2px;
-                bottom: -2px;
-                z-index: -1;
-                border-radius: var(--radius-lg);
-                opacity: 0.7;
-                transition: opacity 0.3s ease;
-            }
-
-            .card-1:hover::before {
-                opacity: 1;
-            }
-
-            .card-1:hover {
-                transform: translateY(-10px) scale(1.05);
-                box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-            }
-
-            .card-inner {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                transition: transform 0.6s;
-                transform-style: preserve-3d;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between; /* Ensure content is well-distributed */
-            }
-
-            .card-1:hover .card-inner {
-                transform: rotateY(180deg);
-            }
-
-            .card-front,
-            .card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                backface-visibility: hidden;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between; /* Better content distribution */
-                padding: 2rem;
-                box-sizing: border-box;
-            }
-
-            .card-back {
-                background: var(--gradient);
-                color: white;
-                transform: rotateY(180deg);
-                border-radius: var(--radius-lg);
-                justify-content: center; /* Center content vertically for back */
-            }
-
-            .card-1 img {
-                width: clamp(120px, 30vw, 150px);
-                height: clamp(120px, 30vw, 150px);
-                border-radius: 50%;
-                margin-bottom: 1.5rem;
-                object-fit: cover;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-                transition: transform 0.4s ease;
-            }
-
-            .card-1:hover img {
-                transform: scale(1.1);
-            }
-
-            .card-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1.2rem; /* Increased gap for better spacing */
-                flex-grow: 1;
-                justify-content: center; /* Center content vertically */
-                width: 100%;
-            }
-
-            .card-1 .name {
-                font-size: clamp(1rem, 3vw, 1.8rem);
-                font-weight: 600;
-                color: var(--primary);
-                margin-bottom: 0.5rem; /* Reduced margin for tighter hierarchy */
-            }
-
-            .card-1 .title {
-                font-size: clamp(1.2rem, 3vw, 1.4rem);
-                color: var(--accent);
-                font-weight: 500;
-                margin-bottom: 1rem;
-            }
-
-            .card-1 p {
-                font-size: clamp(1rem, 2.5vw, 1.2rem);
-                color: var(--text-light);
-                line-height: 1.6;
-                max-width: 85%; /* Slightly reduced to prevent overflow */
-                margin-bottom: 1.2rem;
-            }
-
-            .card-back p {
-                color: white;
-                font-size: clamp(1rem, 2.5vw, 1.2rem);
-                margin-bottom: 1.5rem;
-                max-width: 85%;
-                text-align: center;
+                flex: 0 0 clamp(280px, 80vw, 340px);
+                min-height: 450px;
             }
 
             .card-1 ul {
-                list-style: none;
-                padding: 0;
-                width: 100%;
-                text-align: left; /* Align skills list to the left for better readability */
-                margin-bottom: 1.2rem;
-            }
-
-            .card-1 li {
-                font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-                color: var(--text-light);
-                margin-bottom: 0.8rem;
-                padding-left: 1rem;
-                position: relative;
+                text-align: center;
+                /* Center skills list on smaller screens */
             }
 
             .card-1 li::before {
-                content: "•";
-                color: var(--accent);
-                position: absolute;
-                left: 0;
-                font-size: 1.2rem;
+                content: none;
+                /* Remove bullet on smaller screens for cleaner look */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .developer-card {
+                flex-direction: row;
+                text-align: left;
             }
 
-            .card-1 .social-links {
-                display: flex;
-                gap: 1.8rem; /* Increased gap for better spacing */
-                margin-top: auto; /* Push social links to bottom */
+            .developer-img {
+                flex: 0 0 200px;
             }
 
-            .card-1 .social-links a {
-                color: var(--primary);
-                font-size: clamp(1.4rem, 3.5vw, 1.6rem);
-                transition: all 0.3s ease;
+            .card-1 {
+                flex: 0 0 clamp(340px, 50vw, 380px);
+                min-height: 480px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            html {
+                font-size: 18px;
             }
 
-            .card-back .social-links a {
-                color: white;
+            .developer-img {
+                width: 220px;
+                height: 220px;
             }
 
-            .card-1 .social-links a:hover {
-                color: var(--accent);
-                transform: translateY(-3px) scale(1.3);
-            }
-
-            .progress-bar {
-                width: 80%; /* Reduced width for better centering */
-                height: 10px;
-                background: #e5e7eb;
-                border-radius: 4px;
-                overflow: hidden;
-                margin: 1.2rem auto; /* Centered with auto margins */
-            }
-
-            .progress-fill {
-                height: 100%;
-                background: var(--accent);
-                width: 0;
-                transition: width 1s ease-in-out;
-            }
-
-            .card-1:hover .progress-fill {
-                width: 75%;
-            }
-
-            /* Scroll Buttons */
-            .scroll-btn {
-                position: absolute;
-                top: 50%;
-                width: 3rem;
-                height: 3rem;
-                transform: translateY(-50%);
-                border: none;
-                border-radius: 50%;
-                background: var(--card-bg);
-                box-shadow: var(--shadow);
-                cursor: pointer;
-                display: grid;
-                place-items: center;
-                transition: all 0.3s ease;
-            }
-
-            .scroll-btn:hover {
-                background: #fff;
-                transform: translateY(-50%) scale(1.2);
-            }
-
-            .scroll-btn i {
-                font-size: 1.2rem;
-                color: var(--primary);
-            }
-
-            .scroll-btn.left {
-                left: -2rem;
-            }
-
-            .scroll-btn.right {
-                right: -2rem;
-            }
-
-            /* Scroll Container */
-            .scroll-wrapper {
-                position: relative;
-                margin-top: 3rem;
+            .developer-card {
+                padding: 3rem;
             }
 
             .scroll-container {
-                display: flex;
-                overflow-x: auto;
-                gap: 2.5rem;
-                padding: 2.5rem;
-                scroll-snap-type: x mandatory;
-                scrollbar-width: thin;
-                scrollbar-color: var(--primary) var(--bg);
+                gap: 3rem;
+                padding: 3rem;
             }
 
-            .scroll-container::-webkit-scrollbar {
-                height: 10px;
+            .card-1 {
+                flex: 0 0 clamp(360px, 35vw, 420px);
+                min-height: 520px;
+            }
+        }
+
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
 
-            .scroll-container::-webkit-scrollbar-thumb {
-                background: var(--primary);
-                border-radius: 5px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
             }
 
-            /* General Apply Section */
-            .general-apply {
-                background: var(--card-bg);
-                backdrop-filter: blur(15px);
-                border-radius: var(--radius-lg);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: var(--shadow);
-                padding: clamp(2rem, 5vw, 3rem);
-                text-align: center;
-                margin-bottom: 2rem;
-                animation: fadeIn 1.5s ease-out;
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
+        }
+    </style>
+</head>
 
-            .general-apply h2 {
-                font-size: clamp(1.8rem, 5vw, 2.5rem);
-                color: var(--primary);
-                margin-bottom: 1.5rem;
-            }
+<body oncontextmenu="return false;">
+    <!-- Navigation -->
+    <nav aria-label="Primary navigation">
+        <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="client.html">Client</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="outteam.html">Our Team</a></li>
+            <li><a href="project.html">Our Projects</a></li>
 
-            .general-apply p {
-                font-size: clamp(1rem, 2.5vw, 1.2rem);
-                color: var(--text-light);
-                max-width: 800px;
-                margin: 0 auto 2rem;
-            }
+        </ul>
+    </nav>
 
-            .general-apply form {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                max-width: 600px;
-                margin: 0 auto;
-            }
+    <!-- Hero Section -->
+    <header id="home" role="banner">
+        <h1 class="animate__animated animate__fadeInDown">About Us</h1>
+        <p class="animate__animated animate__fadeInUp">
+            Crafting innovative digital solutions for a connected world
+        </p>
+    </header>
 
-            .general-apply .btn {
-                background: var(--gradient);
-                color: white;
-                font-size: clamp(1rem, 2.5vw, 1.1rem);
-                font-weight: 500;
-                padding: 0.8rem 2rem;
-                border: none;
-                border-radius: var(--radius-lg);
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
+    <!-- Who We Are -->
+    <section class="about-section container">
+        <h2 class="section-title">Who We Are</h2>
+        <p class="about-text">
+            At GlamSlot Saloon, we are passionate innovators dedicated to delivering exceptional digital
+            experiences. Our team specializes in creating cutting-edge web and mobile solutions that empower
+            businesses to thrive in the digital age.
+        </p>
+    </section>
 
-            .general-apply .btn:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .developer-card {
-                    flex-direction: column;
-                    text-align: center;
-                }
-
-                .developer-img {
-                    width: 150px;
-                    height: 150px;
-                }
-
-                .card-1 {
-                    flex: 0 0 clamp(280px, 80vw, 340px);
-                    min-height: 450px;
-                }
-
-                .card-1 ul {
-                    text-align: center; /* Center skills list on smaller screens */
-                }
-
-                .card-1 li::before {
-                    content: none; /* Remove bullet on smaller screens for cleaner look */
-                }
-            }
-
-            @media (min-width: 768px) {
-                .developer-card {
-                    flex-direction: row;
-                    text-align: left;
-                }
-
-                .developer-img {
-                    flex: 0 0 200px;
-                }
-
-                .card-1 {
-                    flex: 0 0 clamp(340px, 50vw, 380px);
-                    min-height: 480px;
-                }
-            }
-
-            @media (min-width: 1024px) {
-                html {
-                    font-size: 18px;
-                }
-                .developer-img {
-                    width: 220px;
-                    height: 220px;
-                }
-                .developer-card {
-                    padding: 3rem;
-                }
-                .scroll-container {
-                    gap: 3rem;
-                    padding: 3rem;
-                }
-                .card-1 {
-                    flex: 0 0 clamp(360px, 35vw, 420px);
-                    min-height: 520px;
-                }
-            }
-
-            /* Custom Animations */
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes scaleIn {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        </style>
-    </head>
-    <body oncontextmenu="return false;">
-        <!-- Navigation -->
-        <nav aria-label="Primary navigation">
-            <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Service</a></li>
-                <li><a href="client.html">Client</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="outteam.html">Our Team</a></li>
-            </ul>
-        </nav>
-
-        <!-- Hero Section -->
-        <header id="home" role="banner">
-            <h1 class="animate__animated animate__fadeInDown">About Us</h1>
-            <p class="animate__animated animate__fadeInUp">
-                Crafting innovative digital solutions for a connected world
-            </p>
-        </header>
-
-        <!-- Who We Are -->
-        <section class="about-section container">
-            <h2 class="section-title">Who We Are</h2>
-            <p class="about-text">
-                At GlamSlot Saloon, we are passionate innovators dedicated to delivering exceptional digital
-                experiences. Our team specializes in creating cutting-edge web and mobile solutions that empower
-                businesses to thrive in the digital age.
-            </p>
-        </section>
-
-        <!-- Meet Our Team -->
-        <section class="scroll-wrapper container">
-            <h2 class="section-title">Meet Our Team</h2>
-            <button class="scroll-btn left" aria-label="Scroll Left"><i class="fas fa-chevron-left"></i></button>
-            <button class="scroll-btn right" aria-label="Scroll Right"><i class="fas fa-chevron-right"></i></button>
-            <div class="scroll-container" role="region" aria-label="Team members">
-                <section class="card-1 animate__animated animate__fadeIn" style="animation-delay: 0.1s">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISuukVSb_iHDfPAaDKboFWXZVloJW9XXiwGYFab-QwlAYQ3zFsx4fToY9ijcVNU5ieKk&usqp=CAU"
-                                alt="Faisal Raza Khan"
-                                loading="lazy" />
-                            <div class="card-content">
-                                <span class="name">Faisal Raza Khan</span>
-                                <span class="title">Founder & CEO</span>
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <span class="name" style="color: white">Faisal Raza Khan</span>
-                            <p>
-                                Leading the team with a vision to revolutionize digital experiences through innovative
-                                technology.
-                            </p>
-                            <div class="social-links">
-                                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+    <!-- Meet Our Team -->
+    <section class="scroll-wrapper container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <button class="scroll-btn left" aria-label="Scroll Left"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-btn right" aria-label="Scroll Right"><i class="fas fa-chevron-right"></i></button>
+        <div class="scroll-container" role="region" aria-label="Team members">
+            <section class="card-1 animate__animated animate__fadeIn" style="animation-delay: 0.1s">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISuukVSb_iHDfPAaDKboFWXZVloJW9XXiwGYFab-QwlAYQ3zFsx4fToY9ijcVNU5ieKk&usqp=CAU"
+                            alt="Faisal Raza Khan" loading="lazy" />
+                        <div class="card-content">
+                            <span class="name">Faisal Raza Khan</span>
+                            <span class="title">Founder & CEO</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <section class="card-1 animate__animated animate__fadeIn" style="animation-delay: 0.3s">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISuukVSb_iHDfPAaDKboFWXZVloJW9XXiwGYFab-QwlAYQ3zFsx4fToY9ijcVNU5ieKk&usqp=CAU"
-                                alt="Vaibhav Bijwe"
-                                loading="lazy" />
-                            <div class="card-content">
-                                <span class="name">Vaibhav Bijwe</span>
-                                <span class="title">Lead Developer</span>
-
-                                <div class="progress-bar">
-                                    <div class="progress-fill"></div>
-                                </div>
-                            </div>
+                    <div class="card-back">
+                        <span class="name" style="color: white">Faisal Raza Khan</span>
+                        <p>
+                            Leading the team with a vision to revolutionize digital experiences through innovative
+                            technology.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
                         </div>
-                        <div class="card-back">
-                            <span class="name" style="color: white">Vaibhav Bijwe</span>
-                            <p>
-                                Driving technical excellence with a focus on scalable and efficient software solutions.
-                            </p>
-                            <div class="social-links">
-                                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section class="card-1 animate__animated animate__fadeIn" style="animation-delay: 0.3s">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISuukVSb_iHDfPAaDKboFWXZVloJW9XXiwGYFab-QwlAYQ3zFsx4fToY9ijcVNU5ieKk&usqp=CAU"
+                            alt="Vaibhav Bijwe" loading="lazy" />
+                        <div class="card-content">
+                            <span class="name">Vaibhav Bijwe</span>
+                            <span class="title">Lead Developer</span>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-        </section>
+                    <div class="card-back">
+                        <span class="name" style="color: white">Vaibhav Bijwe</span>
+                        <p>
+                            Driving technical excellence with a focus on scalable and efficient software solutions.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
 
-        <!-- General Apply Section -->
-        <section class="general-apply container" id="apply">
-            <h2 class="section-title">Didn't Find Your Role?</h2>
-            <p class="about-text">We're always excited to meet new talent. Send us your resume!</p>
-            <form onsubmit="redirectToGoogleForm(event)">
-                <button type="submit" class="btn">Process Application</button>
-            </form>
-        </section>
+    <!-- General Apply Section -->
+    <section class="general-apply container" id="apply">
+        <h2 class="section-title">Didn't Find Your Role?</h2>
+        <p class="about-text">We're always excited to meet new talent. Send us your resume!</p>
+        <form onsubmit="redirectToGoogleForm(event)">
+            <button type="submit" class="btn">Process Application</button>
+        </form>
+    </section>
 
-        <!-- Footer -->
-        <footer>© 2025 CPMCD Tech Platform. All rights reserved.</footer>
+    <!-- Footer -->
+    <footer>© 2025 CPMCD Tech Platform. All rights reserved.</footer>
 
-        <!-- Scripts -->
-        <script>
-            // Hamburger Menu Toggle
-            const hamburger = document.querySelector(".hamburger");
-            const navUl = document.querySelector("nav ul");
-            hamburger.addEventListener("click", () => {
-                navUl.classList.toggle("active");
-                hamburger.querySelector("i").classList.toggle("fa-bars");
-                hamburger.querySelector("i").classList.toggle("fa-times");
+    <!-- Scripts -->
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navUl = document.querySelector("nav ul");
+        hamburger.addEventListener("click", () => {
+            navUl.classList.toggle("active");
+            hamburger.querySelector("i").classList.toggle("fa-bars");
+            hamburger.querySelector("i").classList.toggle("fa-times");
+        });
+
+        // Navigation Scroll Effect
+        window.addEventListener("scroll", () => {
+            const nav = document.querySelector("nav");
+            nav.classList.toggle("scrolled", window.scrollY > 50);
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll("nav a").forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetId === "home") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                } else if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                } else {
+                    window.location.href = this.getAttribute("href");
+                }
             });
+        });
 
-            // Navigation Scroll Effect
-            window.addEventListener("scroll", () => {
-                const nav = document.querySelector("nav");
-                nav.classList.toggle("scrolled", window.scrollY > 50);
-            });
+        // Horizontal Scroll Buttons
+        const scrollContainer = document.querySelector(".scroll-container");
+        const scrollLeftBtn = document.querySelector(".scroll-btn.left");
+        const scrollRightBtn = document.querySelector(".scroll-btn.right");
 
-            // Smooth Scroll for Navigation
-            document.querySelectorAll("nav a").forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetId === "home") {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                    } else if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                        window.location.href = this.getAttribute("href");
+        scrollLeftBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+        });
+
+        // Initialize Vanilla Tilt for Card-1
+        VanillaTilt.init(document.querySelectorAll(".card-1"), {
+            max: 12,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+            scale: 1.05
+        });
+
+        // Parallax Effect
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector("header");
+            const scrollPosition = window.scrollY;
+            header.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
+        });
+
+        // Staggered Animation for Cards
+        const cards = document.querySelectorAll(".card-1");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add("animate__animated", "animate__fadeInUp");
+                        }, index * 200);
                     }
                 });
-            });
+            },
+            { threshold: 0.2 }
+        );
 
-            // Horizontal Scroll Buttons
-            const scrollContainer = document.querySelector(".scroll-container");
-            const scrollLeftBtn = document.querySelector(".scroll-btn.left");
-            const scrollRightBtn = document.querySelector(".scroll-btn.right");
+        cards.forEach((card) => observer.observe(card));
 
-            scrollLeftBtn.addEventListener("click", () => {
-                scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
-            });
-
-            scrollRightBtn.addEventListener("click", () => {
-                scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
-            });
-
-            // Initialize Vanilla Tilt for Card-1
-            VanillaTilt.init(document.querySelectorAll(".card-1"), {
-                max: 12,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.5,
-                scale: 1.05
-            });
-
-            // Parallax Effect
-            window.addEventListener("scroll", () => {
-                const header = document.querySelector("header");
-                const scrollPosition = window.scrollY;
-                header.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
-            });
-
-            // Staggered Animation for Cards
-            const cards = document.querySelectorAll(".card-1");
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry, index) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add("animate__animated", "animate__fadeInUp");
-                            }, index * 200);
-                        }
-                    });
-                },
-                { threshold: 0.2 }
-            );
-
-            cards.forEach((card) => observer.observe(card));
-
-            // Redirect to Google Form
-            function redirectToGoogleForm(event) {
-                event.preventDefault();
-                window.location.href = "https://forms.gle/CaBbnce88KmYjW5A6";
-            }
+        // Redirect to Google Form
+        function redirectToGoogleForm(event) {
+            event.preventDefault();
+            window.location.href = "https://forms.gle/CaBbnce88KmYjW5A6";
+        }
 
 
         document.addEventListener('contextmenu', function (e) {
@@ -797,6 +821,7 @@
             }
         };
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
